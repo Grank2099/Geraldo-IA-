@@ -15,3 +15,4 @@ def simulate_touch(x, y):
 # Simulate touch at coordinates (100, 200)
 time.sleep(2)
 simulate_touch(400, 600)
+
