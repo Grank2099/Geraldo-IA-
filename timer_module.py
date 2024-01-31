@@ -11,6 +11,7 @@ def set_timer(duration_seconds):
     speak(f"Criando cronômetro para {duration_seconds} segundos...")
     time.sleep(duration_seconds)
     print("Timer complete!")
+    speak("O tempo acabou")
 
     # Optionally, trigger a notification to alert the user (requires additional steps)
     # For simplicity, we use a toast notification, but it might not work on all devices

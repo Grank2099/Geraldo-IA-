@@ -20,13 +20,6 @@ def open_app(package_name):
     except subprocess.CalledProcessError as e:
         print(f"Error: {e}")
 
-if __name__ == "__main__":
-    # Example package name (replace with the actual package name of the app you want to open)
-    app_package_name = "com.example.myapp"
-
-    # Open the specified app
-    open_app(app_package_name)
-
 #897 207.3 posição do botão de pesquisa
 
 def simulate_touch(x, y):
@@ -35,7 +28,7 @@ def simulate_touch(x, y):
 
 
 def simulate_keyboard_input(input_text):
-    # Mapping of characters to evdev key codes
+    # Mapiando as teclas para evdev
     char_to_key = {
         'a': ecodes.KEY_A,
         'b': ecodes.KEY_B,
@@ -75,7 +68,7 @@ def simulate_keyboard_input(input_text):
         '9': ecodes.KEY_9,
         
         
-        # Add more mappings as needed
+        # Coloque mais teclas se precisar
     }
 
     with uinput.UInput() as ui:
@@ -88,7 +81,7 @@ def simulate_keyboard_input(input_text):
                 ui.syn()
                 time.sleep(0.1)
 
-        # Press Enter key
+        # Apertar a tecla Enter
         ui.write(ecodes.EV_KEY, ecodes.KEY_ENTER, 1)
         ui.syn()
         time.sleep(0.1)
